@@ -1,6 +1,9 @@
 import { alpha, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
+    gridContainer: {
+      backgroundColor: "#fff",
+    },
     container: {
         display: "flex",
         alignItems: "center",
@@ -19,6 +22,9 @@ const useStyles = makeStyles((theme) => ({
     },
     sidebarContainer: {
         height: '100%',
+        '& >div': {
+          marginBottom: '30px',
+        }
     },
     chevron: {
         display: 'inherit',

@@ -40,9 +40,6 @@ const materialTheme = createTheme({
         MuiSvgIcon: {
             root: {
                 fill: '#525DE5',
-                "&:hover": {
-                    fill: "#fff",
-                }
             }
         },
         MuiTypography: {

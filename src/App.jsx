@@ -1,12 +1,12 @@
 import React from 'react';
 import useStyles from './styles';
-import { Accordion, AccordionSummary, AccordionDetails, Button, CssBaseline, Container, Grid, Toolbar, Typography } from '@material-ui/core';
+import { Button, CssBaseline, Grid, Toolbar, Typography} from '@material-ui/core';
 import { Add, ChevronLeft, ChevronRight, KeyboardArrowDown } from '@material-ui/icons';
 import SettingsIcon from '@material-ui/icons/Settings';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import MiniCalendar from './MiniCalendar';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import CheckboxesGroup from './CheckboxesGroup';
 
 const App = () => {
     const classes = useStyles();
@@ -14,9 +14,9 @@ const App = () => {
     return (
         <>
             <CssBaseline />
-            <Grid container>
+            <Grid container className={classes.gridContainer}>
                 <Grid item xs={3} className={classes.box1}>
-                    <Grid container direction="column" justifyContent="space-between" className={classes.sidebarContainer}>
+                    <Grid container direction="column" className={classes.sidebarContainer}>
                         <Grid item>
                             <div className={classes.container}>
                                 <img className={classes.image} src="https://images.unsplash.com/photo-1630327064614-4e74d61f2a24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1525&q=80" alt="user profile" />
@@ -52,21 +52,7 @@ const App = () => {
                             </div>
                         </Grid>
                         <Grid item>
-                            <Accordion>
-                                <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon />}
-                                    aria-controls="panel1a-content"
-                                    id="panel1a-header"
-                                >
-                                    <Typography className={classes.heading}>My calendars</Typography>
-                                </AccordionSummary>
-                                <AccordionDetails>
-                                    <Typography>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                                        sit amet blandit leo lobortis eget.
-                                    </Typography>
-                                </AccordionDetails>
-                            </Accordion>
+                            <CheckboxesGroup />
                         </Grid>
                     </Grid>
                 </Grid>
