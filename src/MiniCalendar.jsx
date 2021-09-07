@@ -37,11 +37,11 @@ const materialTheme = createTheme({
                 justifyContent: 'space-between',
             }
         },
-        MuiSvgIcon: {
-            root: {
-                fill: '#525DE5',
-            }
-        },
+        // MuiSvgIcon: {
+        //     root: {
+        //         fill: '#525DE5',
+        //     }
+        // },
         MuiTypography: {
             alignCenter: {
                 textAlign: 'left',
@@ -81,6 +81,11 @@ function MiniCalendar() {
         <ThemeProvider theme={materialTheme}>
             <DatePicker
                 autoOk
+                // leftArrowButtonProps={{
+                //     classes: {
+                        
+                //     }
+                // }}
                 orientation="landscape"
                 variant="static"
                 openTo="date"
