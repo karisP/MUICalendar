@@ -4,6 +4,17 @@ import { createTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 
 const materialTheme = createTheme({
+    palette: {
+        primary: {
+            main: '#525DE5',
+        },
+        seconday: {
+            main: '#FFE2F9',
+        },
+        success: {
+            main: '#D7F9F5'
+        }
+    },
     overrides: {
         MuiPickersBasePicker: {
             pickerViewLandscape: {
@@ -37,11 +48,6 @@ const materialTheme = createTheme({
                 justifyContent: 'space-between',
             }
         },
-        // MuiSvgIcon: {
-        //     root: {
-        //         fill: '#525DE5',
-        //     }
-        // },
         MuiTypography: {
             alignCenter: {
                 textAlign: 'left',
@@ -81,11 +87,12 @@ function MiniCalendar() {
         <ThemeProvider theme={materialTheme}>
             <DatePicker
                 autoOk
-                // leftArrowButtonProps={{
-                //     classes: {
-                        
-                //     }
-                // }}
+                leftArrowButtonProps={{
+                    color: "primary",
+                }}
+                rightArrowButtonProps={{
+                    color: "primary",
+                }}
                 orientation="landscape"
                 variant="static"
                 openTo="date"

@@ -17,6 +17,21 @@ const useStyles = makeStyles(() => ({
   },
   accSummaryRoot: {
     padding: 0,
+  },
+  checkboxRoot1: {
+    '&.MuiCheckbox-colorSecondary.Mui-checked': {
+      color: '#EEEAFF',
+    }
+  },
+  checkboxRoot2: {
+    '&.MuiCheckbox-colorSecondary.Mui-checked': {
+      color: '#FFE2F9',
+    }
+  },
+  checkboxRoot3: {
+    '&.MuiCheckbox-colorSecondary.Mui-checked': {
+      color: '#D7F9F5',
+    }
   }
 }));
 
@@ -51,15 +66,24 @@ export default function CheckboxesGroup() {
             <FormControl component="fieldset" className={classes.formControl}>
               <FormGroup>
                 <FormControlLabel
-                  control={<Checkbox checked={birthdays} onChange={handleChange} name="birthdays" />}
+                  control={<Checkbox checked={birthdays} onChange={handleChange} name="birthdays"
+                  classes={{
+                    root: classes.checkboxRoot1,
+                  }}/>}
                   label="Birthdays"
                 />
                 <FormControlLabel
-                  control={<Checkbox checked={reminders} onChange={handleChange} name="reminders" />}
+                  control={<Checkbox checked={reminders} onChange={handleChange} name="reminders"
+                  classes={{
+                    root: classes.checkboxRoot2,
+                  }}/>}
                   label="Reminders"
                 />
                 <FormControlLabel
-                  control={<Checkbox checked={tasks} onChange={handleChange} name="tasks" />}
+                  control={<Checkbox checked={tasks} onChange={handleChange} name="tasks"
+                  classes={{
+                    root: classes.checkboxRoot3,
+                  }}/>}
                   label="Tasks"
                 />
               </FormGroup>
