@@ -13,12 +13,14 @@ const useStyles = makeStyles((theme) => ({
         borderBottom: '2px solid #F1F2F5',
     },
     box1: {
+        width: '350px',
         padding: '20px',
         height: '100vh',
         borderRight: '2px solid #F1F2F5',
     },
     box2: {
         height: '100vh',
+        flex: 1,
     },
     sidebarContainer: {
         height: '100%',
@@ -94,6 +96,9 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '20px',
         height: '50px',
       },
+      bigCalendarCont: {
+        height: 'calc(100% - 64px)',
+      }
 }));
 
 export default useStyles;
