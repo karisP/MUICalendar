@@ -7,7 +7,8 @@ import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import MiniCalendar from './MiniCalendar';
 import CheckboxesGroup from './CheckboxesGroup';
-import BigCalendar from './BigCalendar';
+//import BigCalendar from './BigCalendar';
+import DisplayDailyCalendar from './DisplayDailyCalendar';
 
 const App = () => {
     const classes = useStyles();
@@ -91,7 +92,7 @@ const App = () => {
                     </Toolbar>
                     <Grid container className={classes.bigCalendarCont}>
                         <Grid item xs={12}>
-                            <BigCalendar />
+                            <DisplayDailyCalendar />
                         </Grid>
                     </Grid>
                 </Grid>
