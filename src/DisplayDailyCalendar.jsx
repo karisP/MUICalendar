@@ -19,15 +19,7 @@ const DisplayDailyCalendar = props => {
   const monthEnd = endOfMonth(monthStart);
   const startDate = startOfWeek(monthStart);
   const endDate = endOfWeek(monthEnd);
-  // const weekdays = [
-  //   { id: 0, day: "Sun" },
-  //   { id: 1, day: "Mon" },
-  //   { id: 2, day: "Tue" },
-  //   { id: 3, day: "Wed" },
-  //   { id: 4, day: "Thu" },
-  //   { id: 5, day: "Fri" },
-  //   { id: 6, day: "Sat" }
-  // ];
+  const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
   const eachWeek = [];
   let daysOfWeek = [];
@@ -43,6 +35,11 @@ const DisplayDailyCalendar = props => {
       const cloneDay = day;
       daysOfWeek.push(
         <TableCell key={formattedDate} style={{ borderRight: '2px solid #F1F2F5' }}>
+          {!eachWeek[0] ?
+            <Typography style={{ fontSize: "20px", textAlign: "center", color: '#A1A2AB', marginTop: '20px' }}>
+              {weekDays[day.getDay()]}
+            </Typography>
+            : null}
           <CardActionArea
             onClick={() => props.onDateClick(parse(cloneDay))}
             style={{ height: "100%" }}
@@ -53,6 +50,8 @@ const DisplayDailyCalendar = props => {
                   ? {
                     //backgroundColor: "rgba(128,128,128,0.5)",
                     height: "100%",
+                    display: "flex",
+                    justifyContent: "center",
                   }
                   : {
                     //backgroundColor: "rgba(0,0,0,0)",
@@ -60,11 +59,28 @@ const DisplayDailyCalendar = props => {
                   }
               }
             >
-              <CardContent>
+              <CardContent
+                style={
+                  isSameDay(day, selectedDate)
+                    ? {
+                      padding: '8px',
+                    }
+                    : {
+                      padding: '16px',
+                    }
+                  }
+              >
                 {isSameDay(day, today) ? (
                   <Typography
-                    color="primary"
-                    style={{ fontSize: "20px", textAlign: "center" }}
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      width: 36,
+                      height: 36,
+                      backgroundColor: '#525DE5',
+                      color: "#fff",
+                      borderRadius: "30%", }}
                   >
                     {formattedDate}
                   </Typography>
